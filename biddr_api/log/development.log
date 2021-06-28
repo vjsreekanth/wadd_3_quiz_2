@@ -32,3 +32,1066 @@ FOREIGN KEY ("auction_id")
   [1m[35m (2.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
   [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (3.4ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[36mAuction Destroy (35.6ms)[0m  [1m[31mDELETE FROM "auctions"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (27.7ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible Copper Plate"], ["description", "If we navigate the panel, we can get to the SAS hard drive through the haptic ADP program!"], ["end_date", "2021-07-07"], ["reserve_price", 92.34], ["created_at", "2020-12-21 00:00:00"], ["updated_at", "2020-12-21 00:00:00"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (1.0ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (1.0ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[36mAuction Destroy (46.6ms)[0m  [1m[31mDELETE FROM "auctions"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Practical steel lamp"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Practical steel lamp"], ["description", "Compressing the alarm won't do anything, we need to navigate the wireless gb sensor!"], ["end_date", "2021-07-21"], ["reserve_price", 6.77], ["created_at", "2021-01-03 00:00:00"], ["updated_at", "2021-01-03 00:00:00"]]
+  [1m[36mTRANSACTION (31.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Practical steel lamp"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (43.8ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 0.91], ["auction_id", 2], ["created_at", "2021-06-28 19:15:36.424562"], ["updated_at", "2021-06-28 19:15:36.424562"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 29.95], ["auction_id", 2], ["created_at", "2021-06-28 19:15:36.472398"], ["updated_at", "2021-06-28 19:15:36.472398"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Lightweight leather keyboard"], ["LIMIT", 1]]
+  [1m[36mAuction Create (3.9ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lightweight leather keyboard"], ["description", "Use the optical THX transmitter, then you can compress the digital hard drive!"], ["end_date", "2021-07-11"], ["reserve_price", 54.33], ["created_at", "2021-06-27 00:00:00"], ["updated_at", "2021-06-27 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Lightweight leather keyboard"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Rustic wooden clock"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rustic wooden clock"], ["description", "Use the 1080p COM sensor, then you can index the mobile pixel!"], ["end_date", "2021-07-09"], ["reserve_price", 19.87], ["created_at", "2020-11-10 00:00:00"], ["updated_at", "2020-11-10 00:00:00"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Rustic wooden clock"], ["id", 4], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 4]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 29.88], ["auction_id", 4], ["created_at", "2021-06-28 19:15:36.571018"], ["updated_at", "2021-06-28 19:15:36.571018"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 23.44], ["auction_id", 4], ["created_at", "2021-06-28 19:15:36.573962"], ["updated_at", "2021-06-28 19:15:36.573962"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Aerodynamic granite computer"], ["LIMIT", 1]]
+  [1m[36mAuction Create (2.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Aerodynamic granite computer"], ["description", "I'll synthesize the online GB capacitor, that should alarm the CSS card!"], ["end_date", "2021-06-29"], ["reserve_price", 60.18], ["created_at", "2021-02-12 00:00:00"], ["updated_at", "2021-02-12 00:00:00"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Aerodynamic granite computer"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 48.72], ["auction_id", 5], ["created_at", "2021-06-28 19:15:36.624644"], ["updated_at", "2021-06-28 19:15:36.624644"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Rustic granite car"], ["LIMIT", 1]]
+  [1m[36mAuction Create (4.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rustic granite car"], ["description", "Compressing the program won't do anything, we need to transmit the redundant xss driver!"], ["end_date", "2021-07-07"], ["reserve_price", 59.69], ["created_at", "2021-01-22 00:00:00"], ["updated_at", "2021-01-22 00:00:00"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Rustic granite car"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 35.68], ["auction_id", 6], ["created_at", "2021-06-28 19:15:36.676355"], ["updated_at", "2021-06-28 19:15:36.676355"]]
+  [1m[36mBid Create (1.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 54.61], ["auction_id", 6], ["created_at", "2021-06-28 19:15:36.679621"], ["updated_at", "2021-06-28 19:15:36.679621"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 5.03], ["auction_id", 6], ["created_at", "2021-06-28 19:15:36.683309"], ["updated_at", "2021-06-28 19:15:36.683309"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 21.77], ["auction_id", 6], ["created_at", "2021-06-28 19:15:36.685209"], ["updated_at", "2021-06-28 19:15:36.685209"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Durable linen bottle"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Durable linen bottle"], ["description", "The RAM hard drive is down, index the mobile bandwidth so we can connect the PCI firewall!"], ["end_date", "2021-07-12"], ["reserve_price", 25.19], ["created_at", "2021-06-20 00:00:00"], ["updated_at", "2021-06-20 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Durable linen bottle"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 33.87], ["auction_id", 7], ["created_at", "2021-06-28 19:15:36.726941"], ["updated_at", "2021-06-28 19:15:36.726941"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 5.86], ["auction_id", 7], ["created_at", "2021-06-28 19:15:36.730790"], ["updated_at", "2021-06-28 19:15:36.730790"]]
+  [1m[36mBid Create (0.8ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 41.78], ["auction_id", 7], ["created_at", "2021-06-28 19:15:36.736311"], ["updated_at", "2021-06-28 19:15:36.736311"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Gorgeous cotton bag"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gorgeous cotton bag"], ["description", "Use the optical SCSI pixel, then you can calculate the neural hard drive!"], ["end_date", "2021-07-04"], ["reserve_price", 37.91], ["created_at", "2021-03-18 00:00:00"], ["updated_at", "2021-03-18 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Gorgeous cotton bag"], ["id", 8], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 8]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 7.56], ["auction_id", 8], ["created_at", "2021-06-28 19:15:36.802094"], ["updated_at", "2021-06-28 19:15:36.802094"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 27.31], ["auction_id", 8], ["created_at", "2021-06-28 19:15:36.804953"], ["updated_at", "2021-06-28 19:15:36.804953"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Ergonomic rubber knife"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ergonomic rubber knife"], ["description", "Use the neural PCI bandwidth, then you can copy the mobile application!"], ["end_date", "2021-07-04"], ["reserve_price", 2.26], ["created_at", "2021-06-12 00:00:00"], ["updated_at", "2021-06-12 00:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Ergonomic rubber knife"], ["id", 9], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 9]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 31.18], ["auction_id", 9], ["created_at", "2021-06-28 19:15:36.854716"], ["updated_at", "2021-06-28 19:15:36.854716"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 79.08], ["auction_id", 9], ["created_at", "2021-06-28 19:15:36.860191"], ["updated_at", "2021-06-28 19:15:36.860191"]]
+  [1m[36mBid Create (1.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 66.98], ["auction_id", 9], ["created_at", "2021-06-28 19:15:36.863194"], ["updated_at", "2021-06-28 19:15:36.863194"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Synergistic granite wallet"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Synergistic granite wallet"], ["description", "Use the optical XML hard drive, then you can calculate the neural matrix!"], ["end_date", "2021-07-02"], ["reserve_price", 83.74], ["created_at", "2021-05-30 00:00:00"], ["updated_at", "2021-05-30 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Synergistic granite wallet"], ["id", 10], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 10]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 21.7], ["auction_id", 10], ["created_at", "2021-06-28 19:15:36.917828"], ["updated_at", "2021-06-28 19:15:36.917828"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 55.22], ["auction_id", 10], ["created_at", "2021-06-28 19:15:36.920748"], ["updated_at", "2021-06-28 19:15:36.920748"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Awesome linen watch"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Awesome linen watch"], ["description", "We need to input the multi-byte SMTP capacitor!"], ["end_date", "2021-07-18"], ["reserve_price", 97.2], ["created_at", "2021-03-24 00:00:00"], ["updated_at", "2021-03-24 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Awesome linen watch"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 28.65], ["auction_id", 11], ["created_at", "2021-06-28 19:15:36.968695"], ["updated_at", "2021-06-28 19:15:36.968695"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 82.72], ["auction_id", 11], ["created_at", "2021-06-28 19:15:36.971948"], ["updated_at", "2021-06-28 19:15:36.971948"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 33.18], ["auction_id", 11], ["created_at", "2021-06-28 19:15:36.973946"], ["updated_at", "2021-06-28 19:15:36.973946"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 58.1], ["auction_id", 11], ["created_at", "2021-06-28 19:15:36.975859"], ["updated_at", "2021-06-28 19:15:36.975859"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 49.06], ["auction_id", 11], ["created_at", "2021-06-28 19:15:36.977599"], ["updated_at", "2021-06-28 19:15:36.977599"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Durable cotton watch"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Durable cotton watch"], ["description", "Try to back up the TCP monitor, maybe it will input the online capacitor!"], ["end_date", "2021-07-15"], ["reserve_price", 73.52], ["created_at", "2020-07-28 00:00:00"], ["updated_at", "2020-07-28 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Durable cotton watch"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 12]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 45.73], ["auction_id", 12], ["created_at", "2021-06-28 19:15:37.022799"], ["updated_at", "2021-06-28 19:15:37.022799"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 30.74], ["auction_id", 12], ["created_at", "2021-06-28 19:15:37.025965"], ["updated_at", "2021-06-28 19:15:37.025965"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Intelligent leather bench"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Intelligent leather bench"], ["description", "The SDD sensor is down, override the digital protocol so we can generate the TCP sensor!"], ["end_date", "2021-07-14"], ["reserve_price", 41.31], ["created_at", "2020-07-23 00:00:00"], ["updated_at", "2020-07-23 00:00:00"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Intelligent leather bench"], ["id", 13], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 13]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 48.11], ["auction_id", 13], ["created_at", "2021-06-28 19:15:37.076219"], ["updated_at", "2021-06-28 19:15:37.076219"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Lightweight cotton lamp"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lightweight cotton lamp"], ["description", "Use the bluetooth JSON system, then you can compress the 1080p hard drive!"], ["end_date", "2021-07-12"], ["reserve_price", 88.6], ["created_at", "2020-10-08 00:00:00"], ["updated_at", "2020-10-08 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Lightweight cotton lamp"], ["id", 14], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 14]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 36.01], ["auction_id", 14], ["created_at", "2021-06-28 19:15:37.123809"], ["updated_at", "2021-06-28 19:15:37.123809"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 5.25], ["auction_id", 14], ["created_at", "2021-06-28 19:15:37.126875"], ["updated_at", "2021-06-28 19:15:37.126875"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 87.77], ["auction_id", 14], ["created_at", "2021-06-28 19:15:37.129062"], ["updated_at", "2021-06-28 19:15:37.129062"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 12.71], ["auction_id", 14], ["created_at", "2021-06-28 19:15:37.132704"], ["updated_at", "2021-06-28 19:15:37.132704"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 27.32], ["auction_id", 14], ["created_at", "2021-06-28 19:15:37.134690"], ["updated_at", "2021-06-28 19:15:37.134690"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible rubber coat"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible rubber coat"], ["description", "Try to calculate the SCSI monitor, maybe it will bypass the auxiliary alarm!"], ["end_date", "2021-07-17"], ["reserve_price", 16.71], ["created_at", "2020-07-14 00:00:00"], ["updated_at", "2020-07-14 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible rubber coat"], ["id", 15], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 15]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Fantastic copper keyboard"], ["LIMIT", 1]]
+  [1m[36mAuction Create (3.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fantastic copper keyboard"], ["description", "Use the primary XSS firewall, then you can transmit the optical protocol!"], ["end_date", "2021-07-03"], ["reserve_price", 61.63], ["created_at", "2020-12-10 00:00:00"], ["updated_at", "2020-12-10 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Fantastic copper keyboard"], ["id", 16], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 16]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 75.19], ["auction_id", 16], ["created_at", "2021-06-28 19:15:37.226471"], ["updated_at", "2021-06-28 19:15:37.226471"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Durable steel bottle"], ["LIMIT", 1]]
+  [1m[36mAuction Create (2.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Durable steel bottle"], ["description", "If we reboot the capacitor, we can get to the EXE alarm through the optical SDD panel!"], ["end_date", "2021-07-16"], ["reserve_price", 45.17], ["created_at", "2020-07-11 00:00:00"], ["updated_at", "2020-07-11 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Durable steel bottle"], ["id", 17], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 17]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 12.69], ["auction_id", 17], ["created_at", "2021-06-28 19:15:37.276429"], ["updated_at", "2021-06-28 19:15:37.276429"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible wool gloves"], ["LIMIT", 1]]
+  [1m[36mAuction Create (1.1ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible wool gloves"], ["description", "You can't connect the sensor without hacking the back-end JSON pixel!"], ["end_date", "2021-07-09"], ["reserve_price", 13.99], ["created_at", "2021-05-29 00:00:00"], ["updated_at", "2021-05-29 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible wool gloves"], ["id", 18], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 18]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (3.2ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 5.0], ["auction_id", 18], ["created_at", "2021-06-28 19:15:37.328410"], ["updated_at", "2021-06-28 19:15:37.328410"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 0.77], ["auction_id", 18], ["created_at", "2021-06-28 19:15:37.336399"], ["updated_at", "2021-06-28 19:15:37.336399"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 75.54], ["auction_id", 18], ["created_at", "2021-06-28 19:15:37.338294"], ["updated_at", "2021-06-28 19:15:37.338294"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 95.95], ["auction_id", 18], ["created_at", "2021-06-28 19:15:37.340145"], ["updated_at", "2021-06-28 19:15:37.340145"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 11.6], ["auction_id", 18], ["created_at", "2021-06-28 19:15:37.341978"], ["updated_at", "2021-06-28 19:15:37.341978"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Mediocre concrete chair"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.9ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mediocre concrete chair"], ["description", "Use the 1080p XML alarm, then you can quantify the primary transmitter!"], ["end_date", "2021-07-19"], ["reserve_price", 32.72], ["created_at", "2020-08-28 00:00:00"], ["updated_at", "2020-08-28 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Mediocre concrete chair"], ["id", 19], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 19]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 65.49], ["auction_id", 19], ["created_at", "2021-06-28 19:15:37.394995"], ["updated_at", "2021-06-28 19:15:37.394995"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 93.43], ["auction_id", 19], ["created_at", "2021-06-28 19:15:37.400369"], ["updated_at", "2021-06-28 19:15:37.400369"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 76.79], ["auction_id", 19], ["created_at", "2021-06-28 19:15:37.402371"], ["updated_at", "2021-06-28 19:15:37.402371"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 92.13], ["auction_id", 19], ["created_at", "2021-06-28 19:15:37.404214"], ["updated_at", "2021-06-28 19:15:37.404214"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 74.25], ["auction_id", 19], ["created_at", "2021-06-28 19:15:37.406077"], ["updated_at", "2021-06-28 19:15:37.406077"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Ergonomic paper shirt"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.8ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ergonomic paper shirt"], ["description", "We need to input the solid state SSL program!"], ["end_date", "2021-07-08"], ["reserve_price", 47.78], ["created_at", "2021-03-28 00:00:00"], ["updated_at", "2021-03-28 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Ergonomic paper shirt"], ["id", 20], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 20]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Fantastic copper bag"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fantastic copper bag"], ["description", "The IB application is down, bypass the open-source hard drive so we can override the SAS alarm!"], ["end_date", "2021-06-29"], ["reserve_price", 51.77], ["created_at", "2020-07-09 00:00:00"], ["updated_at", "2020-07-09 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Fantastic copper bag"], ["id", 21], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 21]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 31.4], ["auction_id", 21], ["created_at", "2021-06-28 19:15:37.503834"], ["updated_at", "2021-06-28 19:15:37.503834"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 89.8], ["auction_id", 21], ["created_at", "2021-06-28 19:15:37.506930"], ["updated_at", "2021-06-28 19:15:37.506930"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 23.63], ["auction_id", 21], ["created_at", "2021-06-28 19:15:37.508738"], ["updated_at", "2021-06-28 19:15:37.508738"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 65.88], ["auction_id", 21], ["created_at", "2021-06-28 19:15:37.510728"], ["updated_at", "2021-06-28 19:15:37.510728"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (2.3ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[36mAuction Destroy (1.9ms)[0m  [1m[31mDELETE FROM "auctions"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Intelligent linen pants"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Intelligent linen pants"], ["description", "I'll connect the cross-platform SMS protocol, that should panel the SAS capacitor!"], ["end_date", "2021-07-01"], ["reserve_price", 44.76], ["created_at", "2021-05-04 00:00:00"], ["updated_at", "2021-05-04 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Intelligent linen pants"], ["id", 22], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 22]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 69.73], ["auction_id", 22], ["created_at", "2021-06-28 19:17:38.388867"], ["updated_at", "2021-06-28 19:17:38.388867"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 53.47], ["auction_id", 22], ["created_at", "2021-06-28 19:17:38.392391"], ["updated_at", "2021-06-28 19:17:38.392391"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 71.59], ["auction_id", 22], ["created_at", "2021-06-28 19:17:38.394638"], ["updated_at", "2021-06-28 19:17:38.394638"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 15.16], ["auction_id", 22], ["created_at", "2021-06-28 19:17:38.396780"], ["updated_at", "2021-06-28 19:17:38.396780"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 38.86], ["auction_id", 22], ["created_at", "2021-06-28 19:17:38.398821"], ["updated_at", "2021-06-28 19:17:38.398821"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Practical steel shirt"], ["LIMIT", 1]]
+  [1m[36mAuction Create (2.1ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Practical steel shirt"], ["description", "The SMTP pixel is down, copy the optical system so we can index the AI bus!"], ["end_date", "2021-07-08"], ["reserve_price", 83.77], ["created_at", "2020-09-12 00:00:00"], ["updated_at", "2020-09-12 00:00:00"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Practical steel shirt"], ["id", 23], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 23]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 24.07], ["auction_id", 23], ["created_at", "2021-06-28 19:17:38.450277"], ["updated_at", "2021-06-28 19:17:38.450277"]]
+  [1m[36mBid Create (1.1ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 99.49], ["auction_id", 23], ["created_at", "2021-06-28 19:17:38.454668"], ["updated_at", "2021-06-28 19:17:38.454668"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Gorgeous linen computer"], ["LIMIT", 1]]
+  [1m[36mAuction Create (2.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gorgeous linen computer"], ["description", "The SSL transmitter is down, program the bluetooth system so we can back up the XML protocol!"], ["end_date", "2021-07-18"], ["reserve_price", 37.82], ["created_at", "2020-11-16 00:00:00"], ["updated_at", "2020-11-16 00:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Gorgeous linen computer"], ["id", 24], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 24]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 26.17], ["auction_id", 24], ["created_at", "2021-06-28 19:17:38.499538"], ["updated_at", "2021-06-28 19:17:38.499538"]]
+  [1m[36mBid Create (0.9ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 94.78], ["auction_id", 24], ["created_at", "2021-06-28 19:17:38.502555"], ["updated_at", "2021-06-28 19:17:38.502555"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 58.8], ["auction_id", 24], ["created_at", "2021-06-28 19:17:38.506533"], ["updated_at", "2021-06-28 19:17:38.506533"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Rustic bronze wallet"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rustic bronze wallet"], ["description", "Use the digital TCP driver, then you can generate the optical alarm!"], ["end_date", "2021-07-01"], ["reserve_price", 33.35], ["created_at", "2020-07-20 00:00:00"], ["updated_at", "2020-07-20 00:00:00"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Rustic bronze wallet"], ["id", 25], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 25]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (2.0ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 67.56], ["auction_id", 25], ["created_at", "2021-06-28 19:17:38.552502"], ["updated_at", "2021-06-28 19:17:38.552502"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 24.61], ["auction_id", 25], ["created_at", "2021-06-28 19:17:38.558083"], ["updated_at", "2021-06-28 19:17:38.558083"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 98.42], ["auction_id", 25], ["created_at", "2021-06-28 19:17:38.560123"], ["updated_at", "2021-06-28 19:17:38.560123"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 26.52], ["auction_id", 25], ["created_at", "2021-06-28 19:17:38.562115"], ["updated_at", "2021-06-28 19:17:38.562115"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible concrete bag"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible concrete bag"], ["description", "Try to synthesize the AGP driver, maybe it will calculate the neural program!"], ["end_date", "2021-07-06"], ["reserve_price", 3.48], ["created_at", "2021-05-14 00:00:00"], ["updated_at", "2021-05-14 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible concrete bag"], ["id", 26], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 26]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 34.6], ["auction_id", 26], ["created_at", "2021-06-28 19:17:38.611191"], ["updated_at", "2021-06-28 19:17:38.611191"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 74.21], ["auction_id", 26], ["created_at", "2021-06-28 19:17:38.614445"], ["updated_at", "2021-06-28 19:17:38.614445"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 92.0], ["auction_id", 26], ["created_at", "2021-06-28 19:17:38.616427"], ["updated_at", "2021-06-28 19:17:38.616427"]]
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 5.27], ["auction_id", 26], ["created_at", "2021-06-28 19:17:38.618534"], ["updated_at", "2021-06-28 19:17:38.618534"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Intelligent leather gloves"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.6ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Intelligent leather gloves"], ["description", "You can't parse the matrix without parsing the optical RAM system!"], ["end_date", "2021-07-07"], ["reserve_price", 61.65], ["created_at", "2020-07-19 00:00:00"], ["updated_at", "2020-07-19 00:00:00"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Intelligent leather gloves"], ["id", 27], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 27]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 86.45], ["auction_id", 27], ["created_at", "2021-06-28 19:17:38.665659"], ["updated_at", "2021-06-28 19:17:38.665659"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 52.45], ["auction_id", 27], ["created_at", "2021-06-28 19:17:38.682514"], ["updated_at", "2021-06-28 19:17:38.682514"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 24.13], ["auction_id", 27], ["created_at", "2021-06-28 19:17:38.684580"], ["updated_at", "2021-06-28 19:17:38.684580"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 75.67], ["auction_id", 27], ["created_at", "2021-06-28 19:17:38.686670"], ["updated_at", "2021-06-28 19:17:38.686670"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous cotton plate"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous cotton plate"], ["description", "The SMTP monitor is down, connect the optical pixel so we can back up the HTTP system!"], ["end_date", "2021-07-13"], ["reserve_price", 78.12], ["created_at", "2020-06-30 00:00:00"], ["updated_at", "2020-06-30 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous cotton plate"], ["id", 28], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 28]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 33.94], ["auction_id", 28], ["created_at", "2021-06-28 19:17:38.721514"], ["updated_at", "2021-06-28 19:17:38.721514"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Synergistic cotton keyboard"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Synergistic cotton keyboard"], ["description", "The RSS capacitor is down, calculate the 1080p alarm so we can copy the SSL program!"], ["end_date", "2021-07-05"], ["reserve_price", 43.41], ["created_at", "2021-06-18 00:00:00"], ["updated_at", "2021-06-18 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Synergistic cotton keyboard"], ["id", 29], ["LIMIT", 1]]
+  [1m[36mBid Load (0.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 29]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 77.2], ["auction_id", 29], ["created_at", "2021-06-28 19:17:38.778146"], ["updated_at", "2021-06-28 19:17:38.778146"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous marble hat"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous marble hat"], ["description", "I'll bypass the solid state RSS program, that should alarm the PNG transmitter!"], ["end_date", "2021-06-30"], ["reserve_price", 68.21], ["created_at", "2021-02-25 00:00:00"], ["updated_at", "2021-02-25 00:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous marble hat"], ["id", 30], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 30]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 79.78], ["auction_id", 30], ["created_at", "2021-06-28 19:17:38.831812"], ["updated_at", "2021-06-28 19:17:38.831812"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 45.8], ["auction_id", 30], ["created_at", "2021-06-28 19:17:38.834747"], ["updated_at", "2021-06-28 19:17:38.834747"]]
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 89.86], ["auction_id", 30], ["created_at", "2021-06-28 19:17:38.837103"], ["updated_at", "2021-06-28 19:17:38.837103"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 36.82], ["auction_id", 30], ["created_at", "2021-06-28 19:17:38.840445"], ["updated_at", "2021-06-28 19:17:38.840445"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 12.07], ["auction_id", 30], ["created_at", "2021-06-28 19:17:38.842708"], ["updated_at", "2021-06-28 19:17:38.842708"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible plastic wallet"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible plastic wallet"], ["description", "Try to input the HTTP bus, maybe it will navigate the 1080p alarm!"], ["end_date", "2021-07-05"], ["reserve_price", 53.87], ["created_at", "2020-08-22 00:00:00"], ["updated_at", "2020-08-22 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible plastic wallet"], ["id", 31], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 31]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (1.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 30.28], ["auction_id", 31], ["created_at", "2021-06-28 19:17:38.886129"], ["updated_at", "2021-06-28 19:17:38.886129"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 77.43], ["auction_id", 31], ["created_at", "2021-06-28 19:17:38.892093"], ["updated_at", "2021-06-28 19:17:38.892093"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible linen gloves"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible linen gloves"], ["description", "Compressing the application won't do anything, we need to generate the online rss application!"], ["end_date", "2021-07-12"], ["reserve_price", 22.04], ["created_at", "2020-09-05 00:00:00"], ["updated_at", "2020-09-05 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible linen gloves"], ["id", 32], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 32]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 39.6], ["auction_id", 32], ["created_at", "2021-06-28 19:17:38.935488"], ["updated_at", "2021-06-28 19:17:38.935488"]]
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 90.5], ["auction_id", 32], ["created_at", "2021-06-28 19:17:38.942360"], ["updated_at", "2021-06-28 19:17:38.942360"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 61.08], ["auction_id", 32], ["created_at", "2021-06-28 19:17:38.945096"], ["updated_at", "2021-06-28 19:17:38.945096"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Mediocre granite watch"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mediocre granite watch"], ["description", "Connecting the port won't do anything, we need to calculate the cross-platform png pixel!"], ["end_date", "2021-07-20"], ["reserve_price", 49.03], ["created_at", "2021-06-21 00:00:00"], ["updated_at", "2021-06-21 00:00:00"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Mediocre granite watch"], ["id", 33], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 33]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 27.75], ["auction_id", 33], ["created_at", "2021-06-28 19:17:38.997903"], ["updated_at", "2021-06-28 19:17:38.997903"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 32.43], ["auction_id", 33], ["created_at", "2021-06-28 19:17:39.000968"], ["updated_at", "2021-06-28 19:17:39.000968"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 44.24], ["auction_id", 33], ["created_at", "2021-06-28 19:17:39.002817"], ["updated_at", "2021-06-28 19:17:39.002817"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Mediocre linen shoes"], ["LIMIT", 1]]
+  [1m[36mAuction Create (3.7ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mediocre linen shoes"], ["description", "You can't bypass the bus without connecting the redundant SMS pixel!"], ["end_date", "2021-07-19"], ["reserve_price", 69.57], ["created_at", "2021-06-02 00:00:00"], ["updated_at", "2021-06-02 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Mediocre linen shoes"], ["id", 34], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 34]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 28.43], ["auction_id", 34], ["created_at", "2021-06-28 19:17:39.049667"], ["updated_at", "2021-06-28 19:17:39.049667"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 77.02], ["auction_id", 34], ["created_at", "2021-06-28 19:17:39.052621"], ["updated_at", "2021-06-28 19:17:39.052621"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 19.54], ["auction_id", 34], ["created_at", "2021-06-28 19:17:39.056313"], ["updated_at", "2021-06-28 19:17:39.056313"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 49.99], ["auction_id", 34], ["created_at", "2021-06-28 19:17:39.058494"], ["updated_at", "2021-06-28 19:17:39.058494"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Sleek paper computer"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sleek paper computer"], ["description", "Use the open-source SDD panel, then you can quantify the open-source array!"], ["end_date", "2021-07-08"], ["reserve_price", 5.03], ["created_at", "2020-12-04 00:00:00"], ["updated_at", "2020-12-04 00:00:00"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Sleek paper computer"], ["id", 35], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 35]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (1.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 96.81], ["auction_id", 35], ["created_at", "2021-06-28 19:17:39.102949"], ["updated_at", "2021-06-28 19:17:39.102949"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 62.12], ["auction_id", 35], ["created_at", "2021-06-28 19:17:39.108867"], ["updated_at", "2021-06-28 19:17:39.108867"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 25.6], ["auction_id", 35], ["created_at", "2021-06-28 19:17:39.111016"], ["updated_at", "2021-06-28 19:17:39.111016"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 74.36], ["auction_id", 35], ["created_at", "2021-06-28 19:17:39.113168"], ["updated_at", "2021-06-28 19:17:39.113168"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 4.78], ["auction_id", 35], ["created_at", "2021-06-28 19:17:39.115070"], ["updated_at", "2021-06-28 19:17:39.115070"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible marble clock"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible marble clock"], ["description", "Try to index the SDD monitor, maybe it will hack the digital array!"], ["end_date", "2021-06-29"], ["reserve_price", 91.97], ["created_at", "2020-07-26 00:00:00"], ["updated_at", "2020-07-26 00:00:00"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible marble clock"], ["id", 36], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 36]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 72.95], ["auction_id", 36], ["created_at", "2021-06-28 19:17:39.151017"], ["updated_at", "2021-06-28 19:17:39.151017"]]
+  [1m[36mBid Create (2.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 14.82], ["auction_id", 36], ["created_at", "2021-06-28 19:17:39.154264"], ["updated_at", "2021-06-28 19:17:39.154264"]]
+  [1m[36mBid Create (2.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 96.13], ["auction_id", 36], ["created_at", "2021-06-28 19:17:39.158917"], ["updated_at", "2021-06-28 19:17:39.158917"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Ergonomic linen keyboard"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.4ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ergonomic linen keyboard"], ["description", "You can't synthesize the microchip without connecting the multi-byte XML bandwidth!"], ["end_date", "2021-07-20"], ["reserve_price", 0.46], ["created_at", "2020-10-28 00:00:00"], ["updated_at", "2020-10-28 00:00:00"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Ergonomic linen keyboard"], ["id", 37], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 37]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 71.58], ["auction_id", 37], ["created_at", "2021-06-28 19:17:39.216568"], ["updated_at", "2021-06-28 19:17:39.216568"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Small iron clock"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Small iron clock"], ["description", "You can't quantify the microchip without quantifying the neural USB transmitter!"], ["end_date", "2021-06-30"], ["reserve_price", 64.43], ["created_at", "2021-04-30 00:00:00"], ["updated_at", "2021-04-30 00:00:00"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Small iron clock"], ["id", 38], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 38]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 89.52], ["auction_id", 38], ["created_at", "2021-06-28 19:17:39.268399"], ["updated_at", "2021-06-28 19:17:39.268399"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 20.31], ["auction_id", 38], ["created_at", "2021-06-28 19:17:39.272957"], ["updated_at", "2021-06-28 19:17:39.272957"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 79.93], ["auction_id", 38], ["created_at", "2021-06-28 19:17:39.275284"], ["updated_at", "2021-06-28 19:17:39.275284"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Incredible bronze watch"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Incredible bronze watch"], ["description", "You can't reboot the array without synthesizing the neural GB bus!"], ["end_date", "2021-07-12"], ["reserve_price", 76.19], ["created_at", "2020-11-13 00:00:00"], ["updated_at", "2020-11-13 00:00:00"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Incredible bronze watch"], ["id", 39], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 39]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 45.97], ["auction_id", 39], ["created_at", "2021-06-28 19:17:39.327061"], ["updated_at", "2021-06-28 19:17:39.327061"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous copper computer"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous copper computer"], ["description", "I'll bypass the open-source HDD system, that should array the IB microchip!"], ["end_date", "2021-07-19"], ["reserve_price", 58.52], ["created_at", "2021-01-20 00:00:00"], ["updated_at", "2021-01-20 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous copper computer"], ["id", 40], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 40]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 28.66], ["auction_id", 40], ["created_at", "2021-06-28 19:17:39.381043"], ["updated_at", "2021-06-28 19:17:39.381043"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 78.13], ["auction_id", 40], ["created_at", "2021-06-28 19:17:39.384207"], ["updated_at", "2021-06-28 19:17:39.384207"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 47.57], ["auction_id", 40], ["created_at", "2021-06-28 19:17:39.386237"], ["updated_at", "2021-06-28 19:17:39.386237"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Gorgeous marble keyboard"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gorgeous marble keyboard"], ["description", "Use the wireless FTP capacitor, then you can hack the neural system!"], ["end_date", "2021-07-06"], ["reserve_price", 93.53], ["created_at", "2021-02-28 00:00:00"], ["updated_at", "2021-02-28 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Gorgeous marble keyboard"], ["id", 41], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 41]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 55.9], ["auction_id", 41], ["created_at", "2021-06-28 19:17:39.424596"], ["updated_at", "2021-06-28 19:17:39.424596"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 56.2], ["auction_id", 41], ["created_at", "2021-06-28 19:17:39.427644"], ["updated_at", "2021-06-28 19:17:39.427644"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (42.0ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[36mAuction Destroy (42.3ms)[0m  [1m[31mDELETE FROM "auctions"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Heavy duty concrete computer"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Heavy duty concrete computer"], ["description", "You can't generate the monitor without quantifying the virtual HTTP application!"], ["end_date", "2021-07-09"], ["reserve_price", 20.23], ["created_at", "2020-11-10 00:00:00"], ["updated_at", "2020-11-10 00:00:00"]]
+  [1m[36mTRANSACTION (30.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Heavy duty concrete computer"], ["id", 42], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 93.02], ["auction_id", 42], ["created_at", "2021-06-28 19:18:49.538471"], ["updated_at", "2021-06-28 19:18:49.538471"]]
+  [1m[36mTRANSACTION (40.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Fantastic rubber watch"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fantastic rubber watch"], ["description", "We need to quantify the cross-platform EXE interface!"], ["end_date", "2021-07-11"], ["reserve_price", 16.38], ["created_at", "2021-06-16 00:00:00"], ["updated_at", "2021-06-16 00:00:00"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Fantastic rubber watch"], ["id", 43], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 25.77], ["auction_id", 43], ["created_at", "2021-06-28 19:18:49.621725"], ["updated_at", "2021-06-28 19:18:49.621725"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 96.95], ["auction_id", 43], ["created_at", "2021-06-28 19:18:49.625106"], ["updated_at", "2021-06-28 19:18:49.625106"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 31.54], ["auction_id", 43], ["created_at", "2021-06-28 19:18:49.627224"], ["updated_at", "2021-06-28 19:18:49.627224"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 46.32], ["auction_id", 43], ["created_at", "2021-06-28 19:18:49.629360"], ["updated_at", "2021-06-28 19:18:49.629360"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 90.72], ["auction_id", 43], ["created_at", "2021-06-28 19:18:49.631377"], ["updated_at", "2021-06-28 19:18:49.631377"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Gorgeous plastic shirt"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gorgeous plastic shirt"], ["description", "If we back up the sensor, we can get to the EXE hard drive through the open-source JSON capacitor!"], ["end_date", "2021-07-08"], ["reserve_price", 46.03], ["created_at", "2021-05-22 00:00:00"], ["updated_at", "2021-05-22 00:00:00"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Gorgeous plastic shirt"], ["id", 44], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 60.41], ["auction_id", 44], ["created_at", "2021-06-28 19:18:49.670865"], ["updated_at", "2021-06-28 19:18:49.670865"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 46.7], ["auction_id", 44], ["created_at", "2021-06-28 19:18:49.674074"], ["updated_at", "2021-06-28 19:18:49.674074"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 22.21], ["auction_id", 44], ["created_at", "2021-06-28 19:18:49.676082"], ["updated_at", "2021-06-28 19:18:49.676082"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 64.05], ["auction_id", 44], ["created_at", "2021-06-28 19:18:49.677978"], ["updated_at", "2021-06-28 19:18:49.677978"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 77.73], ["auction_id", 44], ["created_at", "2021-06-28 19:18:49.679971"], ["updated_at", "2021-06-28 19:18:49.679971"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Practical leather car"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Practical leather car"], ["description", "I'll bypass the online RAM card, that should array the RAM program!"], ["end_date", "2021-06-30"], ["reserve_price", 55.41], ["created_at", "2021-05-22 00:00:00"], ["updated_at", "2021-05-22 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Practical leather car"], ["id", 45], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 90.07], ["auction_id", 45], ["created_at", "2021-06-28 19:18:49.715963"], ["updated_at", "2021-06-28 19:18:49.715963"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 25.86], ["auction_id", 45], ["created_at", "2021-06-28 19:18:49.719387"], ["updated_at", "2021-06-28 19:18:49.719387"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 87.49], ["auction_id", 45], ["created_at", "2021-06-28 19:18:49.721449"], ["updated_at", "2021-06-28 19:18:49.721449"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 69.93], ["auction_id", 45], ["created_at", "2021-06-28 19:18:49.723404"], ["updated_at", "2021-06-28 19:18:49.723404"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Sleek granite wallet"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sleek granite wallet"], ["description", "If we program the alarm, we can get to the JSON firewall through the cross-platform USB bus!"], ["end_date", "2021-06-30"], ["reserve_price", 32.45], ["created_at", "2020-10-15 00:00:00"], ["updated_at", "2020-10-15 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Sleek granite wallet"], ["id", 46], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 99.68], ["auction_id", 46], ["created_at", "2021-06-28 19:18:49.758237"], ["updated_at", "2021-06-28 19:18:49.758237"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 92.51], ["auction_id", 46], ["created_at", "2021-06-28 19:18:49.761374"], ["updated_at", "2021-06-28 19:18:49.761374"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Awesome bronze bench"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Awesome bronze bench"], ["description", "I'll reboot the back-end PNG array, that should program the THX monitor!"], ["end_date", "2021-07-18"], ["reserve_price", 31.41], ["created_at", "2020-11-05 00:00:00"], ["updated_at", "2020-11-05 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Awesome bronze bench"], ["id", 47], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 38.5], ["auction_id", 47], ["created_at", "2021-06-28 19:18:49.798612"], ["updated_at", "2021-06-28 19:18:49.798612"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 87.23], ["auction_id", 47], ["created_at", "2021-06-28 19:18:49.801922"], ["updated_at", "2021-06-28 19:18:49.801922"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 38.38], ["auction_id", 47], ["created_at", "2021-06-28 19:18:49.816404"], ["updated_at", "2021-06-28 19:18:49.816404"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 10.3], ["auction_id", 47], ["created_at", "2021-06-28 19:18:49.818463"], ["updated_at", "2021-06-28 19:18:49.818463"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Small paper chair"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Small paper chair"], ["description", "We need to compress the redundant RAM alarm!"], ["end_date", "2021-07-09"], ["reserve_price", 80.51], ["created_at", "2021-03-21 00:00:00"], ["updated_at", "2021-03-21 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Small paper chair"], ["id", 48], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Heavy duty iron shoes"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Heavy duty iron shoes"], ["description", "The PCI feed is down, back up the neural application so we can copy the THX protocol!"], ["end_date", "2021-07-01"], ["reserve_price", 13.9], ["created_at", "2021-02-12 00:00:00"], ["updated_at", "2021-02-12 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Heavy duty iron shoes"], ["id", 49], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 63.74], ["auction_id", 49], ["created_at", "2021-06-28 19:18:49.888247"], ["updated_at", "2021-06-28 19:18:49.888247"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 24.01], ["auction_id", 49], ["created_at", "2021-06-28 19:18:49.891297"], ["updated_at", "2021-06-28 19:18:49.891297"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 69.06], ["auction_id", 49], ["created_at", "2021-06-28 19:18:49.893439"], ["updated_at", "2021-06-28 19:18:49.893439"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 86.18], ["auction_id", 49], ["created_at", "2021-06-28 19:18:49.895356"], ["updated_at", "2021-06-28 19:18:49.895356"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous steel hat"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous steel hat"], ["description", "Try to parse the RAM pixel, maybe it will quantify the wireless interface!"], ["end_date", "2021-07-15"], ["reserve_price", 1.55], ["created_at", "2021-05-08 00:00:00"], ["updated_at", "2021-05-08 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous steel hat"], ["id", 50], ["LIMIT", 1]]
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 89.7], ["auction_id", 50], ["created_at", "2021-06-28 19:18:49.932613"], ["updated_at", "2021-06-28 19:18:49.932613"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 43.84], ["auction_id", 50], ["created_at", "2021-06-28 19:18:49.936320"], ["updated_at", "2021-06-28 19:18:49.936320"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous aluminum lamp"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous aluminum lamp"], ["description", "If we generate the array, we can get to the JSON card through the solid state SMS feed!"], ["end_date", "2021-07-05"], ["reserve_price", 7.06], ["created_at", "2021-06-26 00:00:00"], ["updated_at", "2021-06-26 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous aluminum lamp"], ["id", 51], ["LIMIT", 1]]
+  [1m[36mBid Load (0.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 55.42], ["auction_id", 51], ["created_at", "2021-06-28 19:18:49.973007"], ["updated_at", "2021-06-28 19:18:49.973007"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 50.9], ["auction_id", 51], ["created_at", "2021-06-28 19:18:49.976323"], ["updated_at", "2021-06-28 19:18:49.976323"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 32.45], ["auction_id", 51], ["created_at", "2021-06-28 19:18:49.978820"], ["updated_at", "2021-06-28 19:18:49.978820"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Lightweight cotton wallet"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lightweight cotton wallet"], ["description", "Try to navigate the SMTP driver, maybe it will bypass the redundant program!"], ["end_date", "2021-07-19"], ["reserve_price", 57.0], ["created_at", "2021-02-20 00:00:00"], ["updated_at", "2021-02-20 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Lightweight cotton wallet"], ["id", 52], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 26.38], ["auction_id", 52], ["created_at", "2021-06-28 19:18:50.012978"], ["updated_at", "2021-06-28 19:18:50.012978"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 42.27], ["auction_id", 52], ["created_at", "2021-06-28 19:18:50.016288"], ["updated_at", "2021-06-28 19:18:50.016288"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Heavy duty wool bench"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Heavy duty wool bench"], ["description", "Try to back up the PCI feed, maybe it will copy the back-end microchip!"], ["end_date", "2021-07-03"], ["reserve_price", 59.89], ["created_at", "2020-12-13 00:00:00"], ["updated_at", "2020-12-13 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Heavy duty wool bench"], ["id", 53], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 68.11], ["auction_id", 53], ["created_at", "2021-06-28 19:18:50.049051"], ["updated_at", "2021-06-28 19:18:50.049051"]]
+  [1m[36mBid Create (1.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 62.48], ["auction_id", 53], ["created_at", "2021-06-28 19:18:50.052975"], ["updated_at", "2021-06-28 19:18:50.052975"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 23.98], ["auction_id", 53], ["created_at", "2021-06-28 19:18:50.057056"], ["updated_at", "2021-06-28 19:18:50.057056"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 64.74], ["auction_id", 53], ["created_at", "2021-06-28 19:18:50.058920"], ["updated_at", "2021-06-28 19:18:50.058920"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 15.14], ["auction_id", 53], ["created_at", "2021-06-28 19:18:50.060833"], ["updated_at", "2021-06-28 19:18:50.060833"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Practical plastic car"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Practical plastic car"], ["description", "I'll transmit the primary USB firewall, that should driver the IB alarm!"], ["end_date", "2021-07-20"], ["reserve_price", 72.5], ["created_at", "2020-09-09 00:00:00"], ["updated_at", "2020-09-09 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Practical plastic car"], ["id", 54], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Fantastic steel hat"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fantastic steel hat"], ["description", "I'll parse the 1080p AI protocol, that should transmitter the HTTP driver!"], ["end_date", "2021-07-05"], ["reserve_price", 16.18], ["created_at", "2020-08-22 00:00:00"], ["updated_at", "2020-08-22 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Fantastic steel hat"], ["id", 55], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 92.83], ["auction_id", 55], ["created_at", "2021-06-28 19:18:50.126969"], ["updated_at", "2021-06-28 19:18:50.126969"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 19.04], ["auction_id", 55], ["created_at", "2021-06-28 19:18:50.130089"], ["updated_at", "2021-06-28 19:18:50.130089"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 87.65], ["auction_id", 55], ["created_at", "2021-06-28 19:18:50.132048"], ["updated_at", "2021-06-28 19:18:50.132048"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 38.07], ["auction_id", 55], ["created_at", "2021-06-28 19:18:50.133959"], ["updated_at", "2021-06-28 19:18:50.133959"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Mediocre iron gloves"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mediocre iron gloves"], ["description", "Try to parse the RAM sensor, maybe it will navigate the open-source transmitter!"], ["end_date", "2021-07-01"], ["reserve_price", 67.65], ["created_at", "2020-07-25 00:00:00"], ["updated_at", "2020-07-25 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Mediocre iron gloves"], ["id", 56], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 63.61], ["auction_id", 56], ["created_at", "2021-06-28 19:18:50.170550"], ["updated_at", "2021-06-28 19:18:50.170550"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 88.1], ["auction_id", 56], ["created_at", "2021-06-28 19:18:50.173625"], ["updated_at", "2021-06-28 19:18:50.173625"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 29.31], ["auction_id", 56], ["created_at", "2021-06-28 19:18:50.175595"], ["updated_at", "2021-06-28 19:18:50.175595"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Aerodynamic leather clock"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Aerodynamic leather clock"], ["description", "Try to program the USB firewall, maybe it will generate the online alarm!"], ["end_date", "2021-07-19"], ["reserve_price", 94.52], ["created_at", "2021-06-16 00:00:00"], ["updated_at", "2021-06-16 00:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Aerodynamic leather clock"], ["id", 57], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 83.47], ["auction_id", 57], ["created_at", "2021-06-28 19:18:50.210493"], ["updated_at", "2021-06-28 19:18:50.210493"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 34.62], ["auction_id", 57], ["created_at", "2021-06-28 19:18:50.213504"], ["updated_at", "2021-06-28 19:18:50.213504"]]
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 47.65], ["auction_id", 57], ["created_at", "2021-06-28 19:18:50.215630"], ["updated_at", "2021-06-28 19:18:50.215630"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 55.28], ["auction_id", 57], ["created_at", "2021-06-28 19:18:50.218370"], ["updated_at", "2021-06-28 19:18:50.218370"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Durable copper knife"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Durable copper knife"], ["description", "We need to compress the wireless TCP transmitter!"], ["end_date", "2021-07-21"], ["reserve_price", 14.31], ["created_at", "2021-06-13 00:00:00"], ["updated_at", "2021-06-13 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Durable copper knife"], ["id", 58], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 2.8], ["auction_id", 58], ["created_at", "2021-06-28 19:18:50.256805"], ["updated_at", "2021-06-28 19:18:50.256805"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 66.47], ["auction_id", 58], ["created_at", "2021-06-28 19:18:50.260077"], ["updated_at", "2021-06-28 19:18:50.260077"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 75.51], ["auction_id", 58], ["created_at", "2021-06-28 19:18:50.262042"], ["updated_at", "2021-06-28 19:18:50.262042"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 62.57], ["auction_id", 58], ["created_at", "2021-06-28 19:18:50.263950"], ["updated_at", "2021-06-28 19:18:50.263950"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 83.88], ["auction_id", 58], ["created_at", "2021-06-28 19:18:50.265852"], ["updated_at", "2021-06-28 19:18:50.265852"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Ergonomic marble bench"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ergonomic marble bench"], ["description", "Use the virtual HTTP feed, then you can back up the redundant firewall!"], ["end_date", "2021-07-11"], ["reserve_price", 7.2], ["created_at", "2020-10-18 00:00:00"], ["updated_at", "2020-10-18 00:00:00"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Ergonomic marble bench"], ["id", 59], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 48.23], ["auction_id", 59], ["created_at", "2021-06-28 19:18:50.304835"], ["updated_at", "2021-06-28 19:18:50.304835"]]
+  [1m[36mBid Create (0.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 4.68], ["auction_id", 59], ["created_at", "2021-06-28 19:18:50.308357"], ["updated_at", "2021-06-28 19:18:50.308357"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 33.63], ["auction_id", 59], ["created_at", "2021-06-28 19:18:50.311070"], ["updated_at", "2021-06-28 19:18:50.311070"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 59.59], ["auction_id", 59], ["created_at", "2021-06-28 19:18:50.313114"], ["updated_at", "2021-06-28 19:18:50.313114"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 16.18], ["auction_id", 59], ["created_at", "2021-06-28 19:18:50.315065"], ["updated_at", "2021-06-28 19:18:50.315065"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Enormous copper shoes"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.6ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Enormous copper shoes"], ["description", "Use the back-end GB array, then you can synthesize the cross-platform interface!"], ["end_date", "2021-06-30"], ["reserve_price", 18.0], ["created_at", "2021-05-10 00:00:00"], ["updated_at", "2021-05-10 00:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Enormous copper shoes"], ["id", 60], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 66.39], ["auction_id", 60], ["created_at", "2021-06-28 19:18:50.347719"], ["updated_at", "2021-06-28 19:18:50.347719"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 50.32], ["auction_id", 60], ["created_at", "2021-06-28 19:18:50.351075"], ["updated_at", "2021-06-28 19:18:50.351075"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 95.83], ["auction_id", 60], ["created_at", "2021-06-28 19:18:50.354835"], ["updated_at", "2021-06-28 19:18:50.354835"]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 13.16], ["auction_id", 60], ["created_at", "2021-06-28 19:18:50.357481"], ["updated_at", "2021-06-28 19:18:50.357481"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 59.14], ["auction_id", 60], ["created_at", "2021-06-28 19:18:50.359606"], ["updated_at", "2021-06-28 19:18:50.359606"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "Gorgeous leather gloves"], ["LIMIT", 1]]
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gorgeous leather gloves"], ["description", "Use the solid state HDD sensor, then you can quantify the solid state port!"], ["end_date", "2021-07-20"], ["reserve_price", 9.6], ["created_at", "2020-07-18 00:00:00"], ["updated_at", "2020-07-18 00:00:00"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 AND "auctions"."id" != $2 LIMIT $3[0m  [["title", "Gorgeous leather gloves"], ["id", 61], ["LIMIT", 1]]
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 55.01], ["auction_id", 61], ["created_at", "2021-06-28 19:18:50.401146"], ["updated_at", "2021-06-28 19:18:50.401146"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 19.67], ["auction_id", 61], ["created_at", "2021-06-28 19:18:50.406573"], ["updated_at", "2021-06-28 19:18:50.406573"]]
+  [1m[36mBid Create (0.4ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 26.94], ["auction_id", 61], ["created_at", "2021-06-28 19:18:50.408741"], ["updated_at", "2021-06-28 19:18:50.408741"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "auctions"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "bids"[0m
+Started GET "/" for 127.0.0.1 at 2021-06-28 12:21:09 -0700
+  [1m[35m (43.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.1ms | Allocations: 415)
+Completed 200 OK in 50ms (Views: 26.4ms | ActiveRecord: 0.0ms | Allocations: 2906)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-28 12:21:42 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 30.0ms | Allocations: 219)
+Completed 200 OK in 50ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 883)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-28 12:25:04 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sree/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 46)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:25:43 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (86.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (9.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (6.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (22.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (8.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (9.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (8.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (6.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (10.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (13.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (374.83ms)
+Completed 200 OK in 654ms (Views: 276.2ms | ActiveRecord: 258.9ms | Allocations: 59153)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:27:00 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  Parameters: {"review"=>{"title"=>"Superhahahaha", "body"=>"ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf", "rating"=>"3"}, "auction"=>{}}
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (6.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (152.93ms)
+Completed 200 OK in 160ms (Views: 82.9ms | ActiveRecord: 74.0ms | Allocations: 38247)
+
+
+Started GET "/api/v1/auctions/51" for ::1 at 2021-06-28 12:27:33 -0700
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"review"=>{"title"=>"Superhahahaha", "body"=>"ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf", "rating"=>"3"}, "id"=>"51", "auction"=>{}}
+  [1m[36mAuction Load (1.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:34:in `find_auction'
+[active_model_serializers]   [1m[36mBid Load (7.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:9:in `show'
+[active_model_serializers] Rendered AuctionSerializer with ActiveModelSerializers::Adapter::Attributes (22.93ms)
+Completed 200 OK in 36ms (Views: 19.3ms | ActiveRecord: 8.6ms | Allocations: 3334)
+
+
+Started POST "/api/v1/auctions" for ::1 at 2021-06-28 12:32:43 -0700
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"auction"=>{"title"=>"My Mac book pro", "description"=>"ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf", "reserve_price"=>"30.06", "end_date"=>"2021-07-08"}}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 2505)
+
+
+  
+NameError (uninitialized constant Api::V1::AuctionsController::User):
+  
+app/controllers/api/v1/auctions_controller.rb:14:in `create'
+Started POST "/api/v1/auctions/" for ::1 at 2021-06-28 12:33:31 -0700
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"auction"=>{"title"=>"My Mac book pro", "description"=>"ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf", "reserve_price"=>"30.06", "end_date"=>"2021-07-08"}}
+Completed 500 Internal Server Error in 6ms (Allocations: 2380)
+
+
+  
+NameError (uninitialized constant Api::V1::AuctionsController::User):
+  
+app/controllers/api/v1/auctions_controller.rb:14:in `create'
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:34:25 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (2.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (311.65ms)
+Completed 200 OK in 385ms (Views: 269.5ms | ActiveRecord: 74.2ms | Allocations: 52002)
+
+
+Started POST "/api/v1/auctions/" for ::1 at 2021-06-28 12:34:31 -0700
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"auction"=>{"title"=>"My Mac book pro", "description"=>"ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf", "reserve_price"=>"30.06", "end_date"=>"2021-07-08"}}
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:15:in `create'
+  [1m[36mAuction Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "auctions" WHERE "auctions"."title" = $1 LIMIT $2[0m  [["title", "My mac book pro"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:15:in `create'
+  [1m[36mAuction Create (18.7ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "My mac book pro"], ["description", "ffddsfdfdsfdfdsfdfdsfdfsfsdffdsfdf"], ["end_date", "2021-07-08"], ["reserve_price", 30.06], ["created_at", "2021-06-28 19:34:31.138650"], ["updated_at", "2021-06-28 19:34:31.138650"]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:15:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 90ms (Views: 7.4ms | ActiveRecord: 51.5ms | Allocations: 8159)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:34:36 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (6.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (35.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 62]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (51.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (59.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (9.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (18.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (32.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (11.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (7.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (692.96ms)
+Completed 200 OK in 717ms (Views: 432.2ms | ActiveRecord: 271.1ms | Allocations: 39593)
+
+
+Started POST "/api/v1/auctions/62/bids" for ::1 at 2021-06-28 12:37:36 -0700
+Processing by Api::V1::BidsController#create as JSON
+  Parameters: {"bid"=>{"bid_price"=>"50.06"}, "auction_id"=>"62"}
+  [1m[36mAuction Load (2.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bids_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+  [1m[36mBid Create (10.6ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 50.06], ["auction_id", 62], ["created_at", "2021-06-28 19:37:36.939034"], ["updated_at", "2021-06-28 19:37:36.939034"]]
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 19.7ms | Allocations: 6142)
+
+
+  
+NameError (undefined local variable or method `bid' for #<Api::V1::BidsController:0x0000000000a028>
+Did you mean?  @bid):
+  
+app/controllers/api/v1/bids_controller.rb:9:in `create'
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:38:21 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 62]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (9.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (6.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (9.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (15.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (11.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (12.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (6.5ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.4ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (341.67ms)
+Completed 200 OK in 406ms (Views: 238.3ms | ActiveRecord: 150.3ms | Allocations: 51654)
+
+
+Started POST "/api/v1/auctions/62/bids" for ::1 at 2021-06-28 12:38:35 -0700
+Processing by Api::V1::BidsController#create as JSON
+  Parameters: {"bid"=>{"bid_price"=>"50.06"}, "auction_id"=>"62"}
+  [1m[36mAuction Load (2.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bids_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (17.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+  [1m[36mBid Create (1.5ms)[0m  [1m[32mINSERT INTO "bids" ("bid_price", "auction_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["bid_price", 50.06], ["auction_id", 62], ["created_at", "2021-06-28 19:38:35.792302"], ["updated_at", "2021-06-28 19:38:35.792302"]]
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/bids_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 95ms (Views: 5.9ms | ActiveRecord: 30.5ms | Allocations: 6876)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-06-28 12:38:40 -0700
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (2.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (15.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 62]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (13.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 51]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (99.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 57]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (13.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 43]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (24.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 58]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (1.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 45]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 44]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (4.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 60]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 50]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (49.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 48]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (10.7ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 52]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (21.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 49]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (15.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 53]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (20.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 42]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 47]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (3.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 59]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 46]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (19.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 54]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (29.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 55]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (5.6ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 56]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBid Load (2.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 61]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auctions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (653.84ms)
+Completed 200 OK in 678ms (Views: 298.2ms | ActiveRecord: 363.3ms | Allocations: 39894)
+
+
