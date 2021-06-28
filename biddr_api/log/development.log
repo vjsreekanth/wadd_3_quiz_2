@@ -2240,3 +2240,31 @@ Processing by Api::V1::AuctionsController#create as JSON
 Completed 200 OK in 153ms (Views: 15.9ms | ActiveRecord: 73.2ms | Allocations: 22695)
 
 
+Started DELETE "/api/v1/current_user" for ::1 at 2021-06-28 16:02:46 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/current_user"):
+  
+Started DELETE "/api/v1/session" for ::1 at 2021-06-28 16:03:02 -0700
+Processing by Api::V1::SessionsController#destroy as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 401)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-06-28 16:04:02 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 342ms (Views: 2.4ms | ActiveRecord: 3.5ms | Allocations: 1845)
+
+
+Started DELETE "/api/v1/session" for ::1 at 2021-06-28 16:04:10 -0700
+Processing by Api::V1::SessionsController#destroy as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
