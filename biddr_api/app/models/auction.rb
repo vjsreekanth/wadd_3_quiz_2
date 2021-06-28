@@ -2,7 +2,8 @@ class Auction < ApplicationRecord
 
     before_validation :capitalize_title
 
-    has_many :bids, dependent: :destroy
+    has_many :bids, dependent: :nullify
+    belongs_to :user
 
     validates(:title,
                 presence: true,
