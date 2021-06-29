@@ -2,7 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import {AuctionDetails} from './AuctionDetails';
 import BidList from './BidList';
-import {Auction} from '../requests'
+import NewBidForm from './NewBidForm';
+import {Auction} from '../requests';
 
 export const AuctionShowContext = React.createContext(); 
 
@@ -21,6 +22,10 @@ const AuctionShowPage = props => {
   return(
     <main>
         <AuctionDetails {...auctionShow} />
+        <NewBidForm 
+        createBid={this.createBid}
+        
+        />
         
         <AuctionShowContext.Provider>
         {auctionShow && auctionShow.id && auctionShow.bids?.length > 0 ?

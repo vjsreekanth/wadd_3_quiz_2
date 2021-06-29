@@ -25,24 +25,7 @@ export const Auction = {
         .then(res => res.json());
     },
 
-    // update(id, params){
-    //     return fetch(`${BASE_URL}/questions/${id}`, {
-    //         method: 'PATCH',
-    //         credentials: 'include',
-    //         headers:{
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(params)
-    //     }).then(res => res.json());
-    // },
-
-    // destroy(id){
-    //     return fetch(`${BASE_URL}/questions/${id}`, {
-    //         method: 'DELETE',
-    //         credentials: 'include',
-    //     })
-    // }
-
+   
 }
 
 
@@ -82,3 +65,19 @@ export const User = {
         }).then(res => res.json())
     }
 }
+
+export const Bid = {
+    create(params, id) {
+      return fetch(`${BASE_URL}/auction/${id}/bids`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(params),
+      })
+        .then((res) => res.json())
+        .catch(console.error);
+    }
+  
+  }

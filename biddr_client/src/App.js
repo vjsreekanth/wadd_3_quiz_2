@@ -60,13 +60,13 @@ const App = () => {
            <AuctionIndexPage />
          </Route>
          <AuthRoute
-           isAuthenticated={!!appState.user}
+           isAllowed={!!appState.user}
            exact
            path='/auctions/new'
            component={AuctionNewPage}
          />
          <AuthRoute
-         isAuthenticated={!!appState.user}
+         isAllowed={!!appState.user}
          exact
          path='/auctions/:id'
          component={AuctionShowPage}

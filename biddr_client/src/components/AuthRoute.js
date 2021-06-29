@@ -7,11 +7,11 @@ import { Route, Redirect } from 'react-router-dom';
 // We rename component to Component because we want to be clear that the Component
 // is a user defined React component, which should be named in Pascal case.
 const AuthRoute = ({
-    isAuthenticated,
+    isAllowed,
     component: Component,
     ...routeProps
 }) => {
-    if(isAuthenticated){
+    if(isAllowed){
         // If user exists, navigate to the component that we passed as props.
         // We also want to pass all the routeProps so that they will be available.
         // 'routeProps' is going to be an object that has path, exact, etc.
