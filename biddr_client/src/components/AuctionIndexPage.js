@@ -18,7 +18,8 @@ export const AuctionIndexPage = () => {
     }, []);
   
     return(
-            <main>
+            <main style={{
+                marginLeft:10}}>
                 <h1>Auctions</h1>
                 <ul style={{
                     listStyle: 'none',
@@ -27,7 +28,7 @@ export const AuctionIndexPage = () => {
                 {auctionIndex.auctions.map(auction => (
                     <li key={auction.id}>
                         <Link to={`/auctions/${auction.id}`}>{auction.title}</Link>
-                        <p>post on: {auction.created_at}</p>
+                        <p>post on: {new Date(auction.created_at).toDateString().split(' ').slice(1).join(' ')}</p>
                     </li>
                 ))}
                 </ul>

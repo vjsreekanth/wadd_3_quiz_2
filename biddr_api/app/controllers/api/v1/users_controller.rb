@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::ApplicationController
             render json: {id: user.id}
         else
             render(
-                json: {errors: user.errors.messages},
+                json: {status: 422},
                 status: 422
             )
         end

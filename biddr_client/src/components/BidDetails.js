@@ -2,6 +2,7 @@ import React from 'react';
 
 
 export const BidDetails = props => {
+    
   
     return(
       <div>
@@ -10,7 +11,7 @@ export const BidDetails = props => {
             fontStyle: 'Roboto',
             fontSize: '12px'
             }}
-            >{props.bid_price} On {props.created_at}</p>
+            >${props.bid_price} On {new Date(props.created_at).toDateString().split(' ').slice(1).join(' ')}</p>
         </div>
      
     )

@@ -1,5 +1,6 @@
 class Api::V1::BidsController < Api::ApplicationController
   before_action :authenticate_user!, only:[:create]
+
     def create
         @auction = Auction.find params[:auction_id]
         bid= Bid.new bid_params
@@ -9,7 +10,7 @@ class Api::V1::BidsController < Api::ApplicationController
             render json:{id: bid.id}
         #   redirect_to auction_path(@auction)
         else 
-            render(json: {errors: bid.errors},
+            render(json: {status: 422},
                 status: 422 )
         #   render "auction/show"
         end
