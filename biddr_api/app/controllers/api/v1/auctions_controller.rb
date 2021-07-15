@@ -17,16 +17,8 @@ class Api::V1::AuctionsController < Api::ApplicationController
         if auction.save
             render json:{id: auction.id}
         else
-            render(json: {errors: auction.errors},
+            render(json: {status: 422},
                 status: 422 )
-        end
-    end
-
-    def destroy
-        if @auction.destroy
-            head :ok
-        else
-            head :bad_request
         end
     end
 

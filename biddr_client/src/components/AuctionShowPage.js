@@ -2,8 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import {AuctionDetails} from './AuctionDetails';
 import BidList from './BidList';
-import NewBidForm from './NewBidForm';
-import {Auction} from '../requests';
+import {Auction, Bid} from '../requests';
+
 
 export const AuctionShowContext = React.createContext(); 
 
@@ -18,14 +18,54 @@ const AuctionShowPage = props => {
       setAuctionShow(auction);
     });
   }, []);
+
+
+  const createBid = (bid_params, id) => {
+    Bid.create(bid_params, id)
+      setAuctionShow((state) => {
+        const auctionCopy = JSON.parse(JSON.stringify(state));
+        const newBids = auctionCopy.bids.filter((bid) => {
+          return bid.id !==1
+        })
+        auctionCopy.bids = newBids;
+        return auctionCopy
+      })};
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget)
+        const bid_params = {
+            bid_price: formData.get('bid_price'),
+        
+        }
+        const id = props.match.params.id
+        console.log(id)
+        console.log(bid_params)
+          createBid(bid_params, id)}
   
   return(
-    <main>
+      <main style={{
+              marginLeft:10}}>
+      
         <AuctionDetails {...auctionShow} />
-        <NewBidForm 
-        createBid={this.createBid}
+        <div>
+        <form onSubmit={handleSubmit}>
+           <div>
+               <label htmlFor="bid_price"></label>
+               <br/>
+               <input 
+               name="bid_price" 
+               id="bid_price" 
+               />
+               <input style={{
+
+                    marginLeft:10,
+                }} type="submit" value="Bid"/>
+            </div>
+       </form>
+       </div>
         
-        />
+      
         
         <AuctionShowContext.Provider>
         {auctionShow && auctionShow.id && auctionShow.bids?.length > 0 ?
@@ -36,7 +76,7 @@ const AuctionShowPage = props => {
         }
         </AuctionShowContext.Provider>
       </main>
-  );
+  )
  };
-  
+
  export default AuctionShowPage; 

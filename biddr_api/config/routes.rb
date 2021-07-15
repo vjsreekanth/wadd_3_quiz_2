@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
       resources :auctions, only: [:index, :show, :create] do
-        resources :bids, shallow: :true, only: [:create]
+        resources :bids, shallow: :true, only: [:create, :index]
       end  
       resource :session, only: [:create, :destroy] 
       get("/current_user", to: "sessions#get_current_user")

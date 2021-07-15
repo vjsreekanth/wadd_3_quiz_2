@@ -67,14 +67,14 @@ export const User = {
 }
 
 export const Bid = {
-    create(params, id) {
-      return fetch(`${BASE_URL}/auction/${id}/bids`, {
+    create(bid_params, id) {
+      return fetch(`${BASE_URL}/auctions/${id}/bids`, {
         method: "POST",
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(params),
+        body: JSON.stringify(bid_params),
       })
         .then((res) => res.json())
         .catch(console.error);
